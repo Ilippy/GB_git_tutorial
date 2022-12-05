@@ -56,6 +56,55 @@
 >> Второй уровень цитирования
 >>> Третий уровень цитирования
 
+## Диаграммы
+Чтобы смотреть в VSC в preview диаграммы нужно установить расширение [Markdown Preview Mermaid Support](https://marketplace.visualstudio.com/items?itemName=bierner.markdown-mermaid)
+
+Инструкция по диаграммам [тут](https://habr.com/ru/post/652867/#flowchart)
+
+
+**Задача:** Найти сумму элементов массива, лежащих между максимальным и минимальным по значению элементами.
+```mermaid
+graph TD;
+    begin(["Начало"]) 
+    b1[/"Вводим array[]"/]
+    c1["minIndex = 0<br>maxIndex = 0<br>index = 0"]
+    d1{"index < array.lenght"}
+    d2{"array[index] < array[minindex]"}
+    c2["minIndex = index"]
+    d3{"array[index] > array[max]"}
+    c3["maxIndex = index"]
+    c4["index++"]
+    d4{"indexMin < indexMax"}
+    c5["X = -1"]
+    c6["X = 1"]
+    c7["index = indexMin + X<br>result = 0"]
+    d5{"index != indexMax"}
+    c8["result += array[index]<br>index += X"]
+    b2[/"Вывод result"/]
+    theEnd(["Конец"])
+    begin --> b1
+    b1--> c1
+    c1 --> d1
+    d1 -- да --> d2
+    d2 -- да --> c2
+    d2 -- нет --> d3
+    d3 -- да -->c3
+    c3 --> c4
+    c2 --> c4
+    d3 -- нет --> c4
+    c4 --> d1
+    d1 -- нет -->d4
+    d4 -- нет -->c5
+    d4 -- да -->c6
+    c5 --> c7
+    c6 --> c7
+    c7 -->d5
+    d5 -- да --> c8
+    c8 -->d5
+    d5 -- нет --> b2
+    b2 --> theEnd
+```
+
 ## **Основные команды Git**
 
 * git init – инициализация локального репозитория
