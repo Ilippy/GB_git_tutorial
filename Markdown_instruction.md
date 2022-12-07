@@ -64,7 +64,8 @@
 
 **Задача:** Найти сумму элементов массива, лежащих между максимальным и минимальным по значению элементами.
 ```mermaid
-graph TD;
+%%{ init: { 'flowchart': { 'curve': 'stepAfter' } } }%%
+flowchart TD;
     begin(["Начало"]) 
     b1[/"Вводим array[]"/]
     c1["minIndex = 0<br>maxIndex = 0<br>index = 0"]
