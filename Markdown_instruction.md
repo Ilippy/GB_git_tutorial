@@ -68,7 +68,7 @@
 flowchart TD;
     begin(["Начало"]) 
     b1[/"Вводим array[]"/]
-    c1["minIndex = 0<br>maxIndex = 0<br>index = 0"]
+    c1["minIndex = 0<br>maxIndex = 0<br>index = 1"]
     d1{"index < array.lenght"}
     d2{"array[index] < array[minindex]"}
     c2["minIndex = index"]
